@@ -7,6 +7,7 @@ import {createBrowserRouter, RouterProvider, Router} from "react-router-dom";
 
 // páginas de conteúdos
 import LoginPage from "./routes/LoginPage";
+import ListarUser from "./routes/ListarUser";
 import CadastrarUser from "./routes/CadastrarUser";
 import CadastrarCardapioDiario from "./routes/CadastrarCardapioDiario";
 
@@ -15,11 +16,15 @@ const router = createBrowserRouter ([
     element: <App/>, // container da aplicação
     children: [ // rotas
       {
-        path: "/", 
+        path: "/LoginPage", 
         element: <LoginPage/>,
       },
       {
-        path: "/CadastrarUsuario",
+        path: "/ListarUser",
+        element: <ListarUser/>,
+      },
+      {
+        path: "/CadastrarUser",
         element: <CadastrarUser/>,
       },
       {
