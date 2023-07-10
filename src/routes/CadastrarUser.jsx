@@ -1,11 +1,32 @@
+import menuFetch from '../axios/config';
+import { useState } from "react";
 import React from 'react';
 import './cadastrarUser.css'; // Importe o arquivo CSS aqui
+import { useNavigate } from "react-router-dom";
+
 
 const CadastrarUser = () => {
-  return (
+ 
+    const navigate = useNavigate()
+    const [email, setEmail] = useState()
+    const [nome, setNome] = useState()
+    const [senha, setSenha] = useState()
+    //const [cargo, setCargo] = useState()
+
+    const createUser =  async (e) => {
+        e.preventDefault();
+        const user = {email, nome, senha }
+        console.log(user);
+        await menuFetch.post("/", 
+            {email, nome, senha},
+        )
+    }
+
+
+    return (
     <div className="new-user">
       <h2>Cadastrar Usuário</h2>
-      <form>
+      <form onSubmit={(e) => createUser(e)}>
         <div className="form-control">
           <label htmlFor="email">Email:</label>
           <input 
@@ -13,6 +34,7 @@ const CadastrarUser = () => {
             name="email" 
             id="email" 
             placeholder="Digite seu email" 
+            onChange={(e) => setEmail(e.target.value)}
             className="input email" // Adicione a classe 'email' aqui
             required
           /> 
@@ -24,6 +46,7 @@ const CadastrarUser = () => {
             name="nome" 
             id="nome" 
             placeholder="Digite seu nome" 
+            onChange={(e) => setNome(e.target.value)}
             className="input nome" // Adicione a classe 'nome' aqui
             required
           /> 
@@ -35,21 +58,12 @@ const CadastrarUser = () => {
             name="senha" 
             id="senha" 
             placeholder="Digite sua senha" 
+            onChange={(e) => setSenha(e.target.value)}
             className="input senha" // Adicione a classe 'senha' aqui
             required
           /> 
         </div>
-        <div className="form-control">
-          <label htmlFor="cargo">Cargo:</label>
-          <input 
-            type="text" 
-            name="cargo" 
-            id="cargo" 
-            placeholder="Digite seu cargo" 
-            className="input cargo" // Adicione a classe 'cargo' aqui
-            required
-          /> 
-        </div>
+       
         <input 
           type="submit" 
           value="Cadastrar Usuário" 

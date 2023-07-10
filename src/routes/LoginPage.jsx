@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-import { Link } from "react-router-dom";
 import "./LoginPage.css"
 import axios from "axios";
+import menuFetch from '../axios/config';
 
 const LoginPage = () => {
 
@@ -12,9 +12,7 @@ const LoginPage = () => {
 
       try {
         
-        const response = await axios.get(
-          'https://jsonplaceholder.typicode.com/posts'
-        );
+        const response = await menuFetch.get("/");
 
         const data = response.data;
         
