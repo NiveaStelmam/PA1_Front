@@ -7,9 +7,14 @@ import {createBrowserRouter, RouterProvider, Router} from "react-router-dom";
 
 // páginas de conteúdos
 import LoginPage from "./routes/LoginPage";
-import ListarUser from "./routes/ListarUser";
+//import ListarUser from "./routes/ListarUser";
 import CadastrarUser from "./routes/CadastrarUser";
-import CadastrarCardapioDiario from "./routes/CadastrarCardapioDiario";
+import CadastrarAvisos from "./routes/CadastrarAvisos";
+import CadastrarPratos from "./routes/CadastrarPratos";
+import CardapioSemanal from "./routes/cardapiosemanal";
+import CadastrarSugestao from "./routes/CadastrarSugestao";
+import Avaliacao from "./routes/Avaliacao";
+
 
 const router = createBrowserRouter ([
   {
@@ -20,17 +25,30 @@ const router = createBrowserRouter ([
         element: <LoginPage/>,
       },
       {
-        path: "/ListarUser",
-        element: <ListarUser/>,
+        path: "/avisos",  // OK
+        element: <CadastrarAvisos/>,
       },
       {
-        path: "/CadastrarUser",
+        path: "/pratos",  // OK
+        element: <CadastrarPratos/>,
+      },
+      {
+        path: "/CadastrarUser", // OK
         element: <CadastrarUser/>,
       },
       {
-        path: "/CadastrarCardapioDiario",
-        element: <CadastrarCardapioDiario/>,
+        path: "/cardapiosemanal", // OK
+        element: <CardapioSemanal/>,
       },
+      {
+        path: "/sugestoes", 
+        element: <CadastrarSugestao/>, // OK
+      },
+      {
+        path: "/avaliacoes", 
+        element: <Avaliacao/>,
+      },
+    
     ],
   },
 ]);

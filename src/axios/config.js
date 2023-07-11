@@ -1,10 +1,12 @@
 import axios from "axios";
 
+
+// CONSUMIR O "CADASTRAR USUÁRIO"
 const menuFetch = axios.create({
-    baseURL: "http://localhost:3000/usuarioru",
+    baseURL: "http://localhost:3000",
     headers: {
         "Content-Type": "application/json",
     },
 });
-//5173
+
 export default menuFetch;

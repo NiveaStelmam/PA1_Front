@@ -11,15 +11,24 @@ const NavBar = () => {
 
         <ul>
             <li>
-                <Link to={`/LoginPage`}>Página de Login</Link>
+                <Link to={`/CadastrarUser`} className="ccd-btn ">Cadastrar Usuário</Link>
             </li>
             <li>
-                <Link to={`/CadastrarUser`}>Cadastrar Usuário</Link>
+                <Link to={`/pratos`} className="ccd-btn ">Cadastrar Prato</Link>
             </li>
             <li>
-                <Link to={`/CadastrarCardapioDiario`} className="ccd-btn">
-                    Cadastrar Cardápio Diário
+                <Link to={`/avisos`} className="ccd-btn ">Cadastrar Avisos</Link>
+            </li>
+            <li>
+                <Link to={`/cardapiosemanal`} className="ccd-btn " >
+                    Cadastrar Cardápio Semanal
                 </Link>
+            </li>
+            <li>
+                <Link to={`/sugestoes`} className="ccd-btn ">Cadastrar Sugestão</Link>
+            </li>
+            <li>
+                <Link to={`/avaliacoes`} className="ccd-btn ">Avaliações</Link>
             </li>
         </ul>
     </nav>

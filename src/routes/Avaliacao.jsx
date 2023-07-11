@@ -4,14 +4,12 @@ import React from 'react';
 import './cadastrarUser.css'; // arquivo CSS aqui
 import { useNavigate } from "react-router-dom";
 
-const CadastrarUser = () => {
+const Avaliacao = () => {
  
     const navigate = useNavigate()
     const [email, setEmail] = useState()
     const [nome, setNome] = useState()
-    const [senha, setSenha] = useState()
-    //const [cargo, setCargo] = useState()
-
+    
     const createUser =  async (e) => {
         e.preventDefault();
         const user = {email, nome, senha }
@@ -73,4 +71,4 @@ const CadastrarUser = () => {
   );
 }
 
-export default CadastrarUser;
+export default Avaliacao;
